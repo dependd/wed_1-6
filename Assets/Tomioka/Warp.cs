@@ -9,6 +9,10 @@ public class Warp : MonoBehaviour
 
     private Vector3 _playerPos;
 
+    [Header("7位が目安")]
+    [SerializeField]
+    private float _reversePos;
+
     private void Update()
     {
         _playerPos = _player.transform.position;
@@ -20,14 +24,14 @@ public class Warp : MonoBehaviour
         if (_playerPos.x < 0)
         {
             Debug.Log("左側にいる");
-            _player.transform.position = new Vector3(6.5f, _playerPos.y, _playerPos.z);
+            _player.transform.position = new Vector3(_reversePos, _playerPos.y, _playerPos.z);
 
         }
         //右側にいる
         else if (_playerPos.x > 0)
         {
             Debug.Log("右側にいる");
-            _player.transform.position = new Vector3(-6.5f, _playerPos.y, _playerPos.z);
+            _player.transform.position = new Vector3(-_reversePos, _playerPos.y, _playerPos.z);
         }
 
     }
