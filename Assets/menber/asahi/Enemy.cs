@@ -12,6 +12,12 @@ public abstract class Enemy : MonoBehaviour
     //移動速度
     protected float speed = 1.0f;
 
+    public float enemySpeed {
+        get { return speed; }
+        set { speed = enemySpeed; }
+    }
+
+
     //やられているか
     protected bool down = false;
 
@@ -37,6 +43,10 @@ public abstract class Enemy : MonoBehaviour
 
     public void Down() {
         down = true;
+    }
+    public void OnBecameInvisible(){
+        Debug.Log("ドカーン");
+        Destroy(this.gameObject);
     }
 
 }
