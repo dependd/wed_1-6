@@ -18,7 +18,11 @@ public class MFJenerater : MonoBehaviour
     }
     private void Start()
     {
-        Instantiate(_floar[0], new Vector3(-8, 0, 0), Quaternion.identity);
+        Instantiate(_floar[0], new Vector3(-8, -2, 0), Quaternion.identity);
+        
+        MFJenerate(1,new Vector3(8,10,0));
+        MFJenerate(1, new Vector3(8, 22, 0));
+        MFJenerate(0, new Vector3(-8, 28, 0));
     }
     void Debug()
     {

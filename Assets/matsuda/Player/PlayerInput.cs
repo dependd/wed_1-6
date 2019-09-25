@@ -23,6 +23,7 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MoveSpeed > 10) MoveSpeed = 10;
         MaxSpeed = rg.velocity.magnitude;
         //ジャンプ
         if (Input.GetKeyDown(KeyCode.X) && !playerComp.isAction && !isAir)

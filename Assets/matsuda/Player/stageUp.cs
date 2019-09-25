@@ -10,6 +10,7 @@ public class stageUp : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.name != "player") return;
         time += Time.deltaTime;
         if(time >= 1.6f)
         {
@@ -18,7 +19,7 @@ public class stageUp : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-
+        if (other.gameObject.name != "player") return;
         time = 0;
     }
 }

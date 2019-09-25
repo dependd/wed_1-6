@@ -50,6 +50,7 @@ public class MoveFloar : MonoBehaviour
     }
     private void OnTriggerExit(Collider tcolExit)
     {
+        if(tcolExit.gameObject.name == "player")
         tcolExit.transform.SetParent(null);
     }
 }
