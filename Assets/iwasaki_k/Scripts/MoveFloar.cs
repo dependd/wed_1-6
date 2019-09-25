@@ -1,21 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// 移動する足場
-/// </summary>
+
 public class MoveFloar : MonoBehaviour
 {
-    //子にするためのプレイヤーを格納する
-    private GameObject _childPlayer;
+    private Vector3 force, _firstPos;   //画面外に出た時に初期値に戻す用
+    private bool rdAddCheck;            //rd,firstposの取得チェック
+    private Rigidbody rd;
 
-    private Vector3 force, _firstPos;
+    [SerializeField] private float _moveSpeed = 5f;      //床の動く速度
 
-    private bool rdAddCheck;
-    //床の動く速度
-    [SerializeField] private float _moveSpeed = 5f;
 
-    [HideInInspector] public Rigidbody rd;
     private void Update()
     {
         if (!rdAddCheck)
@@ -24,11 +19,14 @@ public class MoveFloar : MonoBehaviour
             _firstPos = this.gameObject.transform.position;
             rdAddCheck = true;
         }
+        Floarmove();
+    }
+    private void Floarmove()
+    {
         //床の移動制御
         switch (this.gameObject.name)
         {
             case "MF_RtoL(Clone)":
-                //Debug.Log("呼ばれてる");
                 transform.position -= transform.right * _moveSpeed * Time.deltaTime;
                 if (this.transform.position.x < -8) { transform.position = _firstPos; }
                 break;
@@ -37,5 +35,21 @@ public class MoveFloar : MonoBehaviour
                 if (this.transform.position.x > 8) { transform.position = _firstPos; }
                 break;
         }
+    }
+    private void OnTriggerEnter(Collider tcolEnter)
+    {
+        switch(tcolEnter.gameObject.name)
+        {
+            case "player":
+                //playerを動く床の子にする
+                tcolEnter.transform.SetParent(this.transform);
+                break;
+            case "wall":
+                break;
+        }
+    }
+    private void OnTriggerExit(Collider tcolExit)
+    {
+        tcolExit.transform.SetParent(null);
     }
 }
