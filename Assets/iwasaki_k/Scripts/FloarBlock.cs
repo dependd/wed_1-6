@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class FloarBlock : MonoBehaviour
 {
-    [SerializeField] private GameObject _floarClock;
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "player")
+        {
+            other.gameObject.GetComponent<PlayerInput>().MoveSpeed = other.gameObject.GetComponent<PlayerInput>().MoveSpeed / 10;
+            Destroy(this.gameObject);
+        }
+    }
 }
