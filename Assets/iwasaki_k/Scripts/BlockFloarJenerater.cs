@@ -27,7 +27,7 @@ public class BlockFloarJenerater : MonoBehaviour
         {
             int instantNum = Random.Range(0, _fbParent.transform.childCount);
             if (randomList.Contains(instantNum)) { continue; }
-            Instantiate(blocs[instantNum], new Vector3(, 3.5f, 0), Quaternion.identity);
+            Instantiate(blocs[instantNum], new Vector3(0, 3.5f, 0), Quaternion.identity);
             randomList.Add(instantNum);
         }
     }

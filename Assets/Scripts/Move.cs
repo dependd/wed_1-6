@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     private bool isVisible;
-    private Vector3 playerPos;
+    private Vector3 playerPos = new Vector3(0,-4.3f,0);
     private Vector3 EnemyAtacked;
     [SerializeField]private float timeleft = 0;
     [SerializeField]

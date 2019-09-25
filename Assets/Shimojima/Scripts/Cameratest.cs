@@ -16,6 +16,11 @@ public class Cameratest : MonoBehaviour
     public GameObject[] stageHight;
     private float high = 0;
 
+    [SerializeField]
+    GameObject player;
+    [SerializeField]
+    GameObject timerObj;
+
     void Start()
     {
         
@@ -59,11 +64,27 @@ public class Cameratest : MonoBehaviour
         if (!moveON)
         {
             stageNum += num;
+            Invoke("SetWaitTime", 2);
+            player.GetComponent<PlayerInput>().enabled = false;
             //a.transform.position = new Vector3(0, a.transform.position.y + 2.5f, 0);
             if (stageNum >= 4)
             {
                 moveON = true;
             }
+            if(stageNum >= 10)
+            {
+                Invoke("LastStage", 2);
+            }
         }
+    }
+
+    void SetWaitTime()
+    {
+        player.GetComponent<PlayerInput>().enabled = true;
+    }
+
+    void LastStage()
+    {
+        timerObj.SetActive(true);
     }
 }
