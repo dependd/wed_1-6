@@ -10,12 +10,9 @@ public abstract class Enemy : MonoBehaviour
     protected bool flyType = false;
 
     //移動速度
-    protected float speed = 1.0f;
+    public float speed = 1.0f;
 
-    public float enemySpeed {
-        get { return speed; }
-        set { speed = enemySpeed; }
-    }
+    
 
 
     //やられているか
@@ -41,11 +38,13 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract void DownMove();
 
+    //ハンマーが当たったらダウン状態に
     public void Down() {
         down = true;
     }
+
     public void OnBecameInvisible(){
-        Debug.Log("ドカーン");
+        //Debug.Log("ドカーン");
         Destroy(this.gameObject);
     }
 

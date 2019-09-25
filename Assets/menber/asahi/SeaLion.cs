@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class SeaLion : Enemy
 {
+
+    float startspeed;
+
     Quaternion startQuaternion;
     // Start is called before the first frame update
     void Start(){
+        startspeed = speed;
         startQuaternion = this.transform.rotation;
     }
 
@@ -27,7 +31,7 @@ public class SeaLion : Enemy
 
     protected override void DownMove(){
         this.transform.rotation = startQuaternion;
-        if (speed < 0){ speed = speed * -1; }
+        if (speed != startspeed){ speed = startspeed; }
         //一秒でspeed分移動
         this.transform.position += new Vector3(-speed * Time.deltaTime, 0.0f, 0.0f);
     }
