@@ -45,11 +45,22 @@ public class MoveFloar : MonoBehaviour
                 tcolEnter.transform.SetParent(this.transform);
                 break;
             case "wall":
+                this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                tcolEnter.transform.SetParent(null);
                 break;
         }
     }
     private void OnTriggerExit(Collider tcolExit)
     {
-        tcolExit.transform.SetParent(null);
+        switch (tcolExit.gameObject.name)
+        {
+            case "player":
+                //親子関係解除
+                tcolExit.transform.SetParent(null);
+                break;
+            case "wall":
+                this.gameObject.GetComponent<BoxCollider>().isTrigger = false;
+                break;
+        }
     }
 }
