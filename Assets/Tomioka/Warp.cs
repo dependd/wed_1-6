@@ -22,17 +22,17 @@ public class Warp : MonoBehaviour
     public void WarpReverse()
     {
         //左側にいる
-        if (_playerPos.x < -6.5)
+        if (_playerPos.x < -_reversePos)
         {
             Debug.Log("左側にいる");
-            _player.transform.position = new Vector3(_reversePos, _playerPos.y, _playerPos.z);
+            _player.transform.position = new Vector3(_reversePos, _playerPos.y + 0.1f, _playerPos.z);
 
         }
         //右側にいる
-        else if (_playerPos.x > 6.5)
+        else if (_playerPos.x > _reversePos)
         {
             Debug.Log("右側にいる");
-            _player.transform.position = new Vector3(-_reversePos, _playerPos.y, _playerPos.z);
+            _player.transform.position = new Vector3(-_reversePos, _playerPos.y + 0.1f, _playerPos.z);
         }
 
     }
