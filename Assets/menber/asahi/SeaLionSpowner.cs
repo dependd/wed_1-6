@@ -43,9 +43,9 @@ public class SeaLionSpowner : MonoBehaviour
         Enemy newEnemy = enemy.GetComponent<Enemy>();
         newEnemy.speed = speed;
         if (spownpoint == Spownpoint.右) {
-            Debug.Log("ミギダヨ");
+            //Debug.Log("ミギダヨ");
             newEnemy.speed = speed *-1;
-            Debug.Log(enemy.GetComponent<Enemy>().speed);
+            //Debug.Log(enemy.GetComponent<Enemy>().speed);
         }
     }
 
