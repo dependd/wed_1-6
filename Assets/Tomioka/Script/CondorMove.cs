@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CondorMove : MonoBehaviour
 {
-    private Vector3 _condorPos = new Vector3(0,40,0);
+    private Vector3 _condorPos = new Vector3(0,38,0);
 
     [SerializeField]
     private float _timeOut;
