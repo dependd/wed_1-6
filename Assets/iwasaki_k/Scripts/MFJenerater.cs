@@ -9,7 +9,8 @@ public class MFJenerater : MonoBehaviour
     //[0番のvec3が(-8,0,0)]/[1番のvec3が(8,0,0)]
     private void Start()
     {
-        Instantiate(_floar[0], new Vector3(-8,0,0), Quaternion.identity);
+        MFJenerate(0, new Vector3(-8, -2, 0));
+        MFJenerate(1,new Vector3(8,10,0));
     }
     public void MFJenerate(int num,Vector3 _floarPos)
     {

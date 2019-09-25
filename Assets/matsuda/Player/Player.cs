@@ -52,8 +52,9 @@ public class Player : MonoBehaviour
     {
         //コライダーに当たった時の処理類を作っていく
         switch (collision.gameObject.name) {
-            case "See Lion":
+            case "SeaLion":
                 if (collision.gameObject.GetComponent<Enemy>().downFlag) return;
+                Debug.Log("ぎゃあああ");
                 //残機へらす処理
                 break;
             case "":

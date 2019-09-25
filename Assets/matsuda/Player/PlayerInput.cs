@@ -51,13 +51,19 @@ public class PlayerInput : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        isAir = false;
-        MoveSpeed = MoveSpeed * 10;
+        if(collision.gameObject.tag == "Floor")
+        {
+            isAir = false;
+            MoveSpeed = MoveSpeed * 10;
+        }
     }
     private void OnCollisionExit(Collision collision)
     {
-        isAir = true;
-        MoveSpeed = MoveSpeed / 10;
+        if (collision.gameObject.tag == "Floor")
+        {
+            isAir = true;
+            MoveSpeed = MoveSpeed / 10;
+        }
     }
     
 }
