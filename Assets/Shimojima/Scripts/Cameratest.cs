@@ -6,13 +6,14 @@ public class Cameratest : MonoBehaviour
 {
     [SerializeField]
     private bool moveON = false;
+    public GameObject a;
 
     [Range(0.01f,1)]
     public float speed;
 
     [SerializeField]
     private int stageNum;
-    public float[] stageHight;
+    public GameObject[] stageHight;
     private float high = 0;
 
     void Start()
@@ -25,11 +26,12 @@ public class Cameratest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (!moveON)
+            if (!moveON && stageNum != stageHight.Length + 3)
             {
-                if (stageHight.Length != stageNum)
+                stageNum++;
+                a.transform.position = new Vector3(0, a.transform.position.y + 2.5f, 0);
+                if (stageNum >= 4)
                 {
-                    stageNum++;
                     moveON = true;
                 }
             }
@@ -40,12 +42,12 @@ public class Cameratest : MonoBehaviour
     {
         if (moveON)
         {
-            if (transform.position.y < stageHight[stageNum - 1] - 0.5f)
+            if (transform.position.y < stageHight[stageNum - 4].transform.position.y - 0.5f)
             {
                 high += speed;
                 transform.position = new Vector3(0, high, -10);
             }
-            else if (transform.position.y >= stageHight[stageNum - 1] - 0.5f)
+            else if (transform.position.y >= stageHight[stageNum - 4].transform.position.y - 0.5f)
             {
                 moveON = false;
             }
