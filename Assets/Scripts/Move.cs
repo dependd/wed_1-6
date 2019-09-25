@@ -116,9 +116,9 @@ public class Move : MonoBehaviour
 
     private IEnumerator WaitTime()
     {
-        //rb.simulated = false;
+        rb.isKinematic = true;
         yield return new WaitForSeconds(waitTime);
-        //rb.simulated = true;
+        rb.isKinematic = false;
         mutekiFlag = true;
         zankiFlag = true;
         playerPos = EnemyAtacked;
