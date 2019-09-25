@@ -5,13 +5,13 @@ using UnityEngine;
 public class Cameratest : MonoBehaviour
 {
     [SerializeField]
-    private bool moveON = false;
+    public bool moveON = false;
 
     [Range(0.01f,1)]
     public float speed;
 
     [SerializeField]
-    private int stageNum;
+    public int stageNum;
     public float[] stageHight;
     private float high = 0;
 

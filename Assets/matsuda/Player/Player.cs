@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public GameObject Hammer;
     public bool isAction;
+
+    [SerializeField]Cameratest cmr;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.localPosition.y <= cmr.stageHight[cmr.stageNum] - 10)
+        {
+            Debug.Log("miss");
+        }
     }
 
     public void PAttack()

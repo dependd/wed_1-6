@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour
     Rigidbody rg;
     Player playerComp;
 
-    [SerializeField]float MoveSpeed = 10 / 10;
+    [SerializeField]float MoveSpeed;
     [SerializeField]float MaxSpeed;
     [SerializeField]float jumpForce;
 
@@ -28,7 +28,6 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X) && !playerComp.isAction && !isAir)
         {
             rg.AddForce(new Vector3(0, jumpForce, 0));
-            MoveSpeed = MoveSpeed / 10;
         }
         //ハンマー
         else if (Input.GetKeyDown(KeyCode.Z) && !playerComp.isAction && !isAir)
@@ -58,6 +57,7 @@ public class PlayerInput : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         isAir = true;
+        MoveSpeed = MoveSpeed / 10;
     }
     
 }
