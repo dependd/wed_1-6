@@ -1875,6 +1875,11 @@ PrefabInstance:
       propertyPath: spownpoint
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6501623455510086660, guid: 4af24d5bfffa9e84a8c9f7985bf065c8,
+        type: 3}
+      propertyPath: speed
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4af24d5bfffa9e84a8c9f7985bf065c8, type: 3}
 --- !u!1001 &582128392
