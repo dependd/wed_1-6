@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6787551901910047481}
   m_Layer: 0
   m_Name: MF_RtoL
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
+  rd: {fileID: 0}

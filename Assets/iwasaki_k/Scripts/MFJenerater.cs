@@ -11,6 +11,8 @@ public class MFJenerater : MonoBehaviour
     {
         MFJenerate(0, new Vector3(-8, -2, 0));
         MFJenerate(1,new Vector3(8,10,0));
+        MFJenerate(1, new Vector3(8, 22, 0));
+        MFJenerate(0, new Vector3(-8, 28, 0));
     }
     public void MFJenerate(int num,Vector3 _floarPos)
     {

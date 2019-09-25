@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class stageUp : MonoBehaviour
 {
+    [SerializeField]int upLength;
     float time;
     [SerializeField]Cameratest cmr;
 
@@ -12,14 +13,7 @@ public class stageUp : MonoBehaviour
         time += Time.deltaTime;
         if(time >= 1.6f)
         {
-            if (!cmr.moveON)
-            {
-                if (cmr.stageHight.Length != cmr.stageNum)
-                {
-                    cmr.stageNum++;
-                    cmr.moveON = true;
-                }
-            }
+            cmr.UpStage(upLength);
         }
     }
     private void OnTriggerExit(Collider other)

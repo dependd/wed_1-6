@@ -20,11 +20,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         //一定位置より下だと
-        if (transform.localPosition.y <= cmr.stageHight[cmr.stageNum] - 10)
-        {
-            Debug.Log("miss");
-            //残機を減らす処理or関数
-        }
+        //if (transform.localPosition.y <= cmr.stageHight[cmr.stageNum] - 10)
+        //{
+        //    Debug.Log("miss");
+        //    残機を減らす処理or関数
+        //}
     }
     /// <summary>
     ///攻撃の処理関数
