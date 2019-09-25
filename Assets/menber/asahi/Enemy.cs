@@ -41,6 +41,7 @@ public abstract class Enemy : MonoBehaviour
     //ハンマーが当たったらダウン状態に
     public void Down() {
         down = true;
+        this.gameObject.GetComponent<Collider>().enabled = false;
     }
 
     public void OnBecameInvisible(){
