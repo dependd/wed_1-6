@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour
     Rigidbody rg;
     Player playerComp;
 
-    [SerializeField]float MoveSpeed;
+    [SerializeField]public float MoveSpeed;
     [SerializeField]float MaxSpeed;
     [SerializeField]float jumpForce;
 

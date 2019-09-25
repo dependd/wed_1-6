@@ -10,7 +10,7 @@ public class stageUp : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         time += Time.deltaTime;
-        if(time >= 2.5f)
+        if(time >= 1.6f)
         {
             if (!cmr.moveON)
             {
