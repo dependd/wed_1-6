@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     {
         BoxCollider col = Hammer.GetComponent<BoxCollider>();
         col.enabled = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         col.enabled = false;
         isAction = false;
     }
