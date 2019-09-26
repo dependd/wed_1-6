@@ -20,6 +20,8 @@ public class Cameratest : MonoBehaviour
     GameObject player;
     [SerializeField]
     GameObject timerObj;
+    [SerializeField]
+    ItemGenerater item;
 
     void Start()
     {
@@ -86,5 +88,6 @@ public class Cameratest : MonoBehaviour
     void LastStage()
     {
         timerObj.SetActive(true);
+        item.GenerateItem();
     }
 }

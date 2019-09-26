@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public GameObject Hammer;   
     public bool isAction;   //アクション中か
-    
 
+    int itemCount = 0;
+    [SerializeField] Text text;
     [SerializeField]Cameratest cmr;
     // Start is called before the first frame update
     void Start()
@@ -69,6 +71,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "Item")
         {
             //スコア加算
+            text.text = "アイテム取得数　：　" + itemCount.ToString();
             Destroy(other.gameObject);
         }
     }
