@@ -8,7 +8,7 @@ public class MoveFloar : MonoBehaviour
     private bool rdAddCheck;            //rd,firstposの取得チェック
     private Rigidbody rd;
 
-    [SerializeField] private float _moveSpeed = 5f;      //床の動く速度
+    [SerializeField] public float _moveSpeed = 5f;      //床の動く速度
 
 
     private void Update()

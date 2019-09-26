@@ -40,7 +40,7 @@ public class SeaLion : Enemy
         float i = 1.15f;
         if(speed < 0){ i = i * -1; }
         Vector3 point = this.transform.position + new Vector3(i, -0.9f, 0);
-        if (!Physics.CheckSphere(point, 0.01f)) {
+        if (!Physics.CheckSphere(point, 0.1f)) {
             return true;
         }
         return false;
