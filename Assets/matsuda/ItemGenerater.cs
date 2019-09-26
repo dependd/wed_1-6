@@ -5,13 +5,13 @@ using UnityEngine;
 public class ItemGenerater : MonoBehaviour
 {
     [SerializeField] GameObject Item;
-    [SerializeField] Vector3[] GeneratePos = new Vector3[8]; 
+    [SerializeField] Vector3[] GeneratePos = new Vector3[6]; 
     
     public void GenerateItem()
     {
         for (int i= 0;i < 4;i++)
         {
-            int rnd = Random.Range(0,9);
+            int rnd = Random.Range(0,6);
             Instantiate(Item, GeneratePos[rnd], Quaternion.identity);
         }
     }

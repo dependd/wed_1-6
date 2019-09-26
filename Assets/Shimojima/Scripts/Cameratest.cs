@@ -88,6 +88,6 @@ public class Cameratest : MonoBehaviour
     void LastStage()
     {
         timerObj.SetActive(true);
-        item.GenerateItem();
+        //item.GenerateItem();
     }
 }
